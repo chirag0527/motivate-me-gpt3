@@ -11,14 +11,17 @@ const Home = () => {
   const [isChecked1, setIsChecked1] = useState(null)
   const [isChecked2, setIsChecked2] = useState(null)
 
-  function handleChange1(e) {
-    setIsChecked1(e.target.value === 'on' ? true : false);
-    setIsChecked2(!isChecked1)
-  }
+  console.log(isChecked1)
+  console.log(isChecked2)
 
+  function handleChange1(e) {
+    setIsChecked1(e.target.checked);
+    setIsChecked2(!e.target.checked);
+  }
+  
   function handleChange2(e) {
-    setIsChecked2(e.target.value === 'on' ? true : false);
-    setIsChecked1(!isChecked2)
+    setIsChecked2(e.target.checked);
+    setIsChecked1(!e.target.checked);
   }
 
   const callGenerateEndpoint1 = async () => {
