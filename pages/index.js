@@ -8,11 +8,8 @@ const Home = () => {
 
   const [apiOutput, setApiOutput] = useState('')
   const [isGenerating, setIsGenerating] = useState(false)
-  const [isChecked1, setIsChecked1] = useState(null)
+  const [isChecked1, setIsChecked1] = useState(true)
   const [isChecked2, setIsChecked2] = useState(null)
-
-  console.log(isChecked1)
-  console.log(isChecked2)
 
   function handleChange1(e) {
     setIsChecked1(e.target.checked);
@@ -91,7 +88,7 @@ const Home = () => {
         </div>
         <form className='form'>
             <label className="checkbox-container" onChange={handleChange1}>🙂
-                <input type="radio" name="choice"></input>
+                <input type="radio" name="choice" defaultChecked></input>
             </label>
             <label className="checkbox-container" onChange={handleChange2}>😠
                 <input type="radio" name="choice"></input>
@@ -120,15 +117,14 @@ const Home = () => {
         </div>
         )}
       </div>
-      <div className="badge-container grow">
+      <div className="badge-container">
         <a
           href="https://buildspace.so/builds/ai-writer"
           target="_blank"
           rel="noreferrer"
         >
           <div className="badge">
-            <Image src={buildspaceLogo} alt="buildspace logo" />
-            <p>built with buildspace</p>
+            <p>built with <span><u>buildspace</u></span></p>
           </div>
         </a>
       </div>
